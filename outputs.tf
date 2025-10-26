@@ -12,3 +12,8 @@ output "private_subnet_ids" {
   description = "IDs of the private subnets"
   value       = aws_subnet.private[*].id
 }
+
+output "iis_url" {
+  description = "URL to access the IIS web server"
+  value       = "http://${aws_instance.this.public_ip}"
+}
